@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plethora", "Plethora\Plethora.csproj", "{BD2C6A9C-EDB3-4D29-9C89-FD314229C18E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plethora.Tests", "Plethora.Tests\Plethora.Tests.csproj", "{F0A3AA85-7157-4D28-A4C7-5146A115987B}"
