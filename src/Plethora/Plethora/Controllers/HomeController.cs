@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Oak;
-using Massive;
+﻿using System.Web.Mvc;
+using Plethora.Repos;
 
 namespace Plethora.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly BoardGames _BoardGames = new BoardGames();
+
         public ActionResult Index()
         {
+            ViewBag.Games = _BoardGames.All();
+
             return View();
         }
     }
