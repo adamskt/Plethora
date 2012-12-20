@@ -13,5 +13,20 @@ namespace Plethora.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Create( dynamic @params )
+        {
+            if ( string.IsNullOrEmpty( @params.Name ) )
+            {
+                ViewBag.Flash = "Name of game is required.";
+
+                return View();
+            }
+
+            _BoardGames.Insert( @params );
+
+            return null;
+        }
     }
 }

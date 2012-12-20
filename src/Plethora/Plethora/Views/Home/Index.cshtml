@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hello World</h2>
+<div>
+ If this page came up successfully, you're doing good! Go ahead and create a game.
+</div>
+<br />
+@if (ViewBag.Flash != null)
+{
+    <div style="color:Red">@ViewBag.Flash</div>
+}
+
+@foreach (var game in ViewBag.Games)
+{
+    <div>
+        <pre>@game</pre>
+    </div>
+}

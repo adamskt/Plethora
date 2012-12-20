@@ -27,9 +27,12 @@ namespace Oak.Controllers
         public string CreateBoardGames()
         {
             return Seed.CreateTable( "BoardGames",
-                                     new { Id = "uniqueidentifier", PrimaryKey = true },
+                                     Seed.Id(),
                                      new { Name = "nvarchar(100)", Nullable = false },
-                                     new { Description = "nvarchar(max)", Nullable = true }
+                                     new { Description = "nvarchar(max)", Nullable = true },
+                                     new { IsCoop = "bit", Nullable = false, Default = false },
+                                     new { MinPlayers = "smallint", Nullable = false, Default = 1 },
+                                     new { MaxPlayers = "smallint", Nullable = false, Default = 1 }
                     );
         }
 
