@@ -7,10 +7,13 @@ using Oak;
 using Oak.Controllers;
 using Plethora.Controllers;
 
+// ReSharper disable CheckNamespace,InconsistentNaming
 namespace Plethora.Tests.describe_controllers
+
 {
     
     public class describe_HomeController : nspec
+
     {
         HomeController _Controller;
         SeedController _Seed;
@@ -69,3 +72,5 @@ namespace Plethora.Tests.describe_controllers
         }
     }
 }
+
+// ReSharper restore CheckNamespace,InconsistentNaming
