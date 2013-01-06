@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations">
+      <HintPath>C:\Program Files (x86)\JetBrains\ReSharper\v7.1\Bin\JetBrains.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="NSpec">
       <HintPath>..\packages\nspec.0.9.64\lib\NSpec.dll</HintPath>
     </Reference>
