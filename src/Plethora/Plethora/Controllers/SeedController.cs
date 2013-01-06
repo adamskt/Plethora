@@ -32,7 +32,8 @@ namespace Oak.Controllers
                                      new { Description = "nvarchar(max)", Nullable = true },
                                      new { IsCoop = "bit", Nullable = false, Default = false },
                                      new { MinPlayers = "smallint", Nullable = false, Default = 1 },
-                                     new { MaxPlayers = "smallint", Nullable = false, Default = 1 }
+                                     new { MaxPlayers = "smallint", Nullable = false, Default = 1 },
+                                     new { CreatedOn = "datetime", Nullable = false, Default = "getdate()" }
                     );
         }
 
