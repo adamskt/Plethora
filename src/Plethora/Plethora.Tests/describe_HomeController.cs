@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using NSpec;
@@ -51,6 +52,14 @@ namespace Plethora.Tests.describe_controllers
             ( result.ViewBag.Flash as string ).should_be( "Name of game is required." );
         }
 
+        void specify_new_game_has_created_on_date()
+        {
+            controller.Create(new { Name = "Some new game" });
+
+            var firstGame = Games().First();
+
+            ( firstGame.CreatedOn is DateTime ? (DateTime) firstGame.CreatedOn : new DateTime() ).should_be_greater_than( DateTime.Now.AddSeconds( -15 ) );
+        }
 
 
         IEnumerable<dynamic> Games()
