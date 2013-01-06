@@ -9,27 +9,28 @@ using Plethora.Controllers;
 
 namespace Plethora.Tests.describe_controllers
 {
+    
     public class describe_HomeController : nspec
     {
-        HomeController controller;
-        SeedController seed;
+        HomeController _Controller;
+        SeedController _Seed;
 
         void before_each()
         {
-            controller = new HomeController();
+            _Controller = new HomeController();
 
-            seed = new SeedController();
+            _Seed = new SeedController();
 
-            seed.PurgeDb();
+            _Seed.PurgeDb();
 
-            seed.All();
+            _Seed.All();
         }
 
         void specify_listing_games()
         {
             new { Name = "Big magical game" }.InsertInto( "BoardGames" );
 
-            var result = controller.Index() as ViewResult;
+            var result = _Controller.Index() as ViewResult;
 
             var firstBoardGame = Games().First();
 
@@ -38,7 +39,7 @@ namespace Plethora.Tests.describe_controllers
 
         void specify_new_game()
         {
-            controller.Create( new { Name = "Some new game" } );
+            _Controller.Create( new { Name = "Some new game" } );
 
             var firstBoardGame = Games().First();
 
@@ -47,14 +48,14 @@ namespace Plethora.Tests.describe_controllers
 
         void specify_invalid_game()
         {
-            var result = controller.Create(new { Name = string.Empty }) as ViewResult;
+            var result = _Controller.Create(new { Name = string.Empty }) as ViewResult;
 
             ( result.ViewBag.Flash as string ).should_be( "Name of game is required." );
         }
 
         void specify_new_game_has_created_on_date()
         {
-            controller.Create(new { Name = "Some new game" });
+            _Controller.Create(new { Name = "Some new game" });
 
             var firstGame = Games().First();
 
@@ -64,7 +65,7 @@ namespace Plethora.Tests.describe_controllers
 
         IEnumerable<dynamic> Games()
         {
-            return ( controller.Index() as ViewResult ).ViewBag.Games as IEnumerable<dynamic>;
+            return ( _Controller.Index() as ViewResult ).ViewBag.Games as IEnumerable<dynamic>;
         }
     }
 }
