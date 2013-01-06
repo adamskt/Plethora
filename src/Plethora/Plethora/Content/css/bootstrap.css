@@ -1,3 +1,4 @@
+/* ReSharper disable InvalidValue */
 /*!
  * Bootstrap v2.2.1
  *
@@ -5891,3 +5892,5 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+
+/* ReSharper restore InvalidValue */
